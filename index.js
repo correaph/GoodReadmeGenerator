@@ -120,8 +120,8 @@ const questions = [
 // function to initialize program
 function init() {
     inquirer.prompt(questions).then((answers) => {
-        var data = "#" + answers.Title;
-        data = data + "\n\n##Description :octocat:";
+        var data = "# " + answers.Title;
+        data = data + "\n\n## Description :octocat:";
         data = data + "\n\n" + answers.Description;
         data = data + "\n\n" + "## Table of Contents";
         data = data + "\n\n" + "* [Installation](#installation)";
@@ -129,20 +129,20 @@ function init() {
         data = data + "\n\n" + "* [Contributing](#contributing)";
         data = data + "\n\n" + "* [Test](#test)";
         data = data + "\n\n" + "* [Questions](#questions)";
-        data = data + "\n\n##Installation";
+        data = data + "\n\n## Installation";
         data = data + "\n\n"+ answers.Installation;
-        data = data + "\n\n##Usage";
+        data = data + "\n\n## Usage";
         data = data + "\n\n"+ answers.Usage;
-        data = data + "\n\n##License";
+        data = data + "\n\n## License";
         data = data + "\n\n"+ answers.License;
-        data = data + "\n\n##Contributing";
+        data = data + "\n\n## Contributing";
         data = data + "\n\n"+ answers.Contributing; 
         data = data + "\n\n[My GitHub Profile](https://github.com/" + answers.Username + ")"; 
-        data = data + "\n\n##Test";
+        data = data + "\n\n## Test";
         data = data + "\n\n"+ answers.Test;
-        data = data + "\n\n##Questions";
+        data = data + "\n\n## uestions";
         data = data + "\n\n"+ answers.Questions;
-        data = data + "\n\n[Send me an e-mail](" + answers.Email + ")"; 
+        data = data + "\n\nSend me an e-mail <" + answers.Email + ">"; 
         filename = "temp_readme.md";
         // function to write README file
         write.sync(filename, data, { overwrite: true });
